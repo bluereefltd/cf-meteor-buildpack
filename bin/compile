@@ -70,8 +70,9 @@ install_meteor() {
 build() {
   (
     cd $BUILD_DIR
-    status "Building meteor bundle"
+    status "Updating to 1.2.1 version"
     meteor update --release 1.2.1
+    status "Building meteor bundle"
     meteor build --directory deploy --server http://localhost:3000
     cd deploy/bundle/programs/server
     status "Installing npm dependencies"
